@@ -8,12 +8,12 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 <!-- <beans> </beans> 내부에 개별 비즈니스 객체들인 Bean들을 <bean>라는 태그로 정의 -->
-    <!--  TapeReader에 대한 빈 설정 정보  -->
-    <bean class = "dev.spring.step03_factory_injection.TapeReader">
-
+    <bean id="tape" class="dev.spring.step04_setter_injection.Tape">
+        <property name="name" value="아일랜드"/>
+        <property name="worked" value="true"/>
     </bean>
-    <!--  Tape에 대한 빈 설정 정보  -->
-    <bean class = "dev.spring.step03_factory_injection.Tape">
 
+    <bean id="tapeReader" class="dev.spring.step04_setter_injection.TapeReader">
+        <property name="tape" ref="tape"/>
     </bean>
 </beans>
