@@ -1,4 +1,4 @@
-package dev.spring.step05_constructor_injection;
+package dev.spring.step06_field_injection;
 
 
 import org.springframework.context.ApplicationContext;
@@ -8,7 +8,7 @@ public class MyRoom {
     public static void main(String[] args) {
 
         ApplicationContext context
-                = new ClassPathXmlApplicationContext("constructor-config.xml");
+                = new ClassPathXmlApplicationContext("annotation-config-field.xml");
 
         TapeReader reader = context.getBean(TapeReader.class);
         System.out.println("reader = " + reader);

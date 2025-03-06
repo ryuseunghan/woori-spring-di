@@ -1,4 +1,4 @@
-package dev.spring.step05_constructor_injection.step04_setter_injection;
+package dev.spring.step05_constructor_injection;
 
 public class Tape {
     private String name;

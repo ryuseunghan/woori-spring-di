@@ -1,4 +1,4 @@
-package dev.spring.step05_constructor_injection;
+package dev.spring.step06_field_injection;
 
 // Tape 클래스를 테스트할 수 있는 비디오 기기
 public class TapeReader {
