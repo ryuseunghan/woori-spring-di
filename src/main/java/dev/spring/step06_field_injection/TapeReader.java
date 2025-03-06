@@ -1,8 +1,10 @@
 package dev.spring.step06_field_injection;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 // Tape 클래스를 테스트할 수 있는 비디오 기기
 public class TapeReader {
-
+    @Autowired // 설정 파일인 .xml 파일에서 Tape 타입에 해당하는 Bean들을
     private Tape tape;
 
     public TapeReader(Tape tape) {

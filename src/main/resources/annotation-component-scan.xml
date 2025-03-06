@@ -7,12 +7,19 @@
 		https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context
 		https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--
+        component-scan 옵션
+        - annotation-config 옵션이 감지하지 못하는 bean들을 직접 java 클래스에 명시해서
+        Spring이 해당 클래스들을 하나의 Bean의 형태로 스캔할 수 있도록 활성화해주는 옵션
 
-    <context:annotation-config />
+        xml 파일에 별도의 <bean>을 작성하지 않고도 스프링 컨테이너에 Bean으로 등록할 수 있는 옵션
+        결과적으로 XML파일과의 의존성이 낮아짐
+    -->
+    <context:component-scan base-package="dev.spring.step09_component_scan" />
+    <!--
+        base-package: 해당 패키지를 기준으로 하위에 속한 클래스들을 스캐닝해서
+        Bean으로 등록하기 위해 작성된 @Component를 찾고, 스프링 컨테이너에 Bean으로 등록함
+    -->
 
-    <bean id="tapeReader" class="dev.spring.step07_annotation_constructor_injection.TapeReader">
-    </bean>
-
-    <bean id="tape" class="dev.spring.step07_annotation_constructor_injection.Tape">
-    </bean>
+    <!-- <bean>에 대한 코드를 제거됨 -->
 </beans>

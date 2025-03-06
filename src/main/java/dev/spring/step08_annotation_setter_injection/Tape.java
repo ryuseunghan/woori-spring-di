@@ -1,15 +1,12 @@
-package dev.spring.step07_annotation_constructor_injection;
+package dev.spring.step08_annotation_setter_injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 public class Tape {
     private String name;
     private boolean isWorked;
-    @Autowired
-    public Tape(String name, boolean worked) {
-        this.name = name;
-        this.isWorked = worked;
-    }
+    public Tape() {}
 
     public String getName() {
         return name;
@@ -19,4 +16,15 @@ public class Tape {
         return isWorked;
     }
 
+    @Autowired
+    public void setName(@Value("아일랜드") String name) {
+        System.out.println("setName() called");
+        this.name = name;
+    }
+
+    @Autowired
+    public void setWorked(@Value("true") boolean isWorked) {
+        System.out.println("setWorked() called");
+        this.isWorked = isWorked;
+    }
 }

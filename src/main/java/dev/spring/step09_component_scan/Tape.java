@@ -1,12 +1,21 @@
-package dev.spring.step08_annotation_setter_injection;
+package dev.spring.step09_component_scan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Tape {
+
     private String name;
     private boolean isWorked;
-    public Tape() {}
+
+    // @Autowired
+    public Tape(@Value("아일랜드") String name, @Value("true") boolean isWorked) {
+        super();
+        this.name = name;
+        this.isWorked = isWorked;
+    }
 
     public String getName() {
         return name;
@@ -16,15 +25,4 @@ public class Tape {
         return isWorked;
     }
 
-    @Autowired
-    public void setName(@Value("아일랜드") String name) {
-        System.out.println("setName() called");
-        this.name = name;
-    }
-
-    @Autowired
-    public void setWorked(@Value("true") boolean isWorked) {
-        System.out.println("setWorked() called");
-        this.isWorked = isWorked;
-    }
 }
